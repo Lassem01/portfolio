@@ -1,108 +1,90 @@
-const studyProjects = [
-	{
-		name: "DiscGolf app",
-		description: (
-			<>
-				<span className="block mb-2 font-medium text-primary">
-					Discprof er en disc golf-applikasjon utviklet som et prosjektarbeid for APP2000 ved USN Bø for studieåret 2024/2025.
-				</span>
-				Applikasjonen lar brukere:
-				<ul className="list-disc list-inside mb-2">
-					<li>Finne og utforske disc golf-baner i hele Norge med detaljert informasjon</li>
-					<li>Se interaktive kart over banene med hullinformasjon (OpenLayers)</li>
-					<li>Spore spillresultater og personlige statistikker</li>
-					<li>Vurdere og anmelde baner</li>
-					<li>Delta i fellesskap og turneringer</li>
-					<li>Motta varsler om banevedlikehold og arrangementer</li>
-					<li>Se sanntids værdata for hver bane, hentet basert på banens geografiske plassering</li>
-					<li>Bruke applikasjonen på flere språk (flerspråklig støtte)</li>
-				</ul>
-				<a
-					href="https://github.com/Lassem01/APP2000_G02_25"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="text-blue-600 underline font-semibold hover:text-blue-800 transition-colors duration-150"
-				>
-					Se prosjektet på GitHub
-				</a>
-			</>
-		),
-		link: "#",
-	},
+const projects = [
+  {
+    category: "Studieprosjekt",
+    name: "Discprof DiscGolf-app",
+    description:
+      "En disc golf-applikasjon der brukere kan utforske baner i Norge, spore resultater, se interaktive kart og få sanntids værdata for hver bane.",
+    tags: ["React", "Node.js", "OpenLayers", "PostgreSQL"],
+    github: "https://github.com/Lassem01/APP2000_G02_25",
+  },
+  {
+    category: "Studieprosjekt",
+    name: "Mini Search Engine",
+    description:
+      "En enkel søkemotor bygget i Java som indekserer og søker gjennom tekster.",
+    tags: ["Java"],
+    github: "https://github.com/Lassem01/Mini-search-engine",
+  },
+  {
+    category: "Hobbyprosjekt",
+    name: "Portefølje",
+    description:
+      "Min personlige portefølje og digitale CV, bygget med Next.js og TailwindCSS.",
+    tags: ["Next.js", "TypeScript", "TailwindCSS"],
+    github: "https://github.com/Lassem01/hjemmeside",
+  },
 ];
 
-const hobbyProjects = [
-	{
-		name: "Portfolio",
-		description: (
-			<>
-				Dette prosjektet er min personlige portefølje og digitale CV. Her kan du bli litt bedre kjent med meg, se hva jeg har jobbet med, hvilke ferdigheter jeg har, og hvilke prosjekter jeg har gjennomført. Nettsiden er bygget med Next.js og TailwindCSS, og er laget for å gi et helhetlig og moderne inntrykk til deg som vurderer å samarbeide med meg – enten du er potensiell arbeidsgiver, kollega eller bare nysgjerrig.
-				<br />
-				<br />
-				<a
-					href="https://github.com/Lassem01/hjemmeside"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="text-blue-600 underline font-semibold hover:text-blue-800 transition-colors duration-150"
-				>
-					Se prosjektet på GitHub
-				</a>
-			</>
-		),
-		link: "#",
-	},
-];
+const tagColors: Record<string, string> = {
+  "Java": "bg-yellow-200 text-yellow-800",
+  "React": "bg-cyan-200 text-cyan-800",
+  "Node.js": "bg-green-200 text-green-800",
+  "OpenLayers": "bg-blue-200 text-blue-800",
+  "PostgreSQL": "bg-indigo-200 text-indigo-800",
+  "Next.js": "bg-gray-200 text-gray-800",
+  "TypeScript": "bg-blue-200 text-blue-800",
+  "TailwindCSS": "bg-teal-200 text-teal-800",
+};
 
 export function Projects() {
-	return (
-		<section className="max-w-2xl mx-auto py-8 px-4" id="projects">
-			<h2 className="text-3xl font-extrabold mb-6 text-primary text-center tracking-tight">
-				Prosjekter
-			</h2>
-			<div className="space-y-8">
-				<div>
-					<h3 className="text-xl font-bold mb-4 text-primary text-center">
-						Studieprosjekt
-					</h3>
-					<div className="space-y-6">
-						{studyProjects.map((project) => (
-							<div
-								key={project.name}
-								className="border border-primary/20 bg-white/70 dark:bg-slate-800/70 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
-							>
-								<div className="text-lg font-bold text-primary flex items-center gap-2 mb-1">
-									<span className="inline-block w-2 h-2 bg-primary rounded-full"></span>
-									{project.name}
-								</div>
-								<p className="text-muted-foreground text-base leading-relaxed">
-									{project.description}
-								</p>
-							</div>
-						))}
-					</div>
-				</div>
-				<div>
-					<h3 className="text-xl font-bold mb-4 text-primary text-center">
-						Hobbyprosjekt
-					</h3>
-					<div className="space-y-6">
-						{hobbyProjects.map((project) => (
-							<div
-								key={project.name}
-								className="border border-primary/20 bg-white/70 dark:bg-slate-800/70 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
-							>
-								<div className="text-lg font-bold text-primary flex items-center gap-2 mb-1">
-									<span className="inline-block w-2 h-2 bg-primary rounded-full"></span>
-									{project.name}
-								</div>
-								<p className="text-muted-foreground text-base leading-relaxed">
-									{project.description}
-								</p>
-							</div>
-						))}
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+  return (
+    <section className="max-w-2xl mx-auto py-8 px-4" id="projects">
+      <div className="space-y-5">
+        {projects.map((project) => (
+          <div
+            key={project.name}
+            className="group border border-border rounded-2xl p-6 hover:border-foreground transition-all duration-200"
+          >
+            <div className="flex items-start justify-between gap-4 mb-3">
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground font-mono mb-0.5">
+                  {project.category}
+                </p>
+                <h3 className="text-lg font-semibold text-foreground leading-tight">
+                  {project.name}
+                </h3>
+              </div>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Se ${project.name} på GitHub`}
+                className="shrink-0 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium border border-border text-foreground hover:bg-accent transition-all duration-200"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.577.688.48C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" />
+                </svg>
+                GitHub
+              </a>
+            </div>
+
+            <p className="text-base text-foreground leading-relaxed mb-4">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className={`px-3 py-1 rounded-full text-sm font-semibold border border-primary/20 ${tagColors[tag] ?? "bg-gray-200 text-gray-800"}`}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }

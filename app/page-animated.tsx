@@ -28,7 +28,7 @@ export default function HomeAnimated() {
 						<button
 							key={tab.name}
 							onClick={() => setSelected(idx)}
-							className={`pb-3 text-xs uppercase tracking-widest font-mono transition-colors focus:outline-none border-b-2 -mb-px ${
+							className={`pb-3 text-s uppercase tracking-widest font-mono transition-colors focus:outline-none border-b-2 -mb-px ${
 								selected === idx
 									? "border-foreground text-foreground"
 									: "border-transparent text-muted-foreground hover:text-foreground"

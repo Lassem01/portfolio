@@ -9,15 +9,16 @@ const skills = [
 	{ name: "Node.js", color: "bg-green-200 text-green-800" },
 	// Databaser
 	{ name: "PostgreSQL", color: "bg-indigo-200 text-indigo-800" },
-	{ name: "MongoDB", color: "bg-emerald-200 text-emerald-800" },
 	{ name: "MySQL", color: "bg-sky-200 text-sky-800" },
 	// Programvare/Verktøy
 	{ name: "Git", color: "bg-orange-200 text-orange-800" },
 	{ name: "Figma", color: "bg-pink-200 text-pink-800" },
 	{ name: "Visual Paradigm", color: "bg-purple-200 text-purple-800" },
 	{ name: "Vercel", color: "bg-gray-300 text-gray-900" },
+	{ name: "Zabbix", color: "bg-red-200 text-red-800" },
+	{ name: "Linux", color: "bg-lime-200 text-lime-800" },
 	// Annet
-	{ name: "Agile/SCRUM", color: "bg-red-200 text-red-800" },
+	{ name: "Agile/SCRUM", color: "bg-amber-200 text-amber-800" },
 ];
 
 export function Skills() {
