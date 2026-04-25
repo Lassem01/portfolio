@@ -1,7 +1,7 @@
 export function About() {
   const images = [
     { src: "/Tur-Skog.jpeg", alt: "Bilde 1" },
-    { src: "/Dress.JPG", alt: "Bilde 2" },
+    { src: "/dress.JPG", alt: "Bilde 2" },
     { src: "/london.jpeg", alt: "Bilde 3" },
   ];
 
